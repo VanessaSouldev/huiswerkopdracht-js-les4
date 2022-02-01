@@ -1,4 +1,5 @@
 // VOORRAAD ARRAY MET TV'S
+
 const inventory = [
   {
     type: '43PUS6504/12',
@@ -161,3 +162,41 @@ const inventory = [
     sold: 8,
   },
 ];
+//Opdracht 1 - Array Methoden
+//Opdracht 1a: Gebruik een array-methode om een array te maken met alle tv-type namen. Log de uitkomst in de console.
+//Opdracht 1b: Gebruik een array-methode om alle tv's te verzamelen (de hele objecten) die volledig uitverkocht zijn. Log de uitkomst in de console.
+//Opdracht 1c: Gebruik een array-methode om alle tv's te verzamelen (de hele objecten) die over AmbiLight beschikken. Log de uitkomst in de console.
+//Opdracht 1d: Schrijf een functie die alle tv's van laagste naar hoogste prijs sorteert. Log de uitkomst in de console.
+
+//Opdracht 1a: Gebruik een array-methode om een array te maken met alle tv-type namen. Log de uitkomst in de console.
+
+const tvName = inventory.map((tv) => {
+  return tv.name;
+});
+
+console.log(tvName);
+
+//Opdracht 1b: Gebruik een array-methode om alle tv's te verzamelen (de hele objecten) die volledig uitverkocht zijn. Log de uitkomst in de console.
+
+const soldOut = inventory.filter((sold) => {
+
+  return sold.originalStock === sold.sold;
+
+});
+
+console.log(soldOut);
+
+//Opdracht 1c: Gebruik een array-methode om alle tv's te verzamelen (de hele objecten) die over AmbiLight beschikken. Log de uitkomst in de console.
+
+const ambiLight = inventory.filter((ambi) => {
+
+  return ambi.options.ambiLight === true;
+});
+
+console.log(ambiLight);
+
+//Opdracht 1d: Schrijf een functie die alle tv's van laagste naar hoogste prijs sorteert. Log de uitkomst in de console.
+
+inventory.sort((a, b) => a.price - b.price);
+
+console.log(inventory);
